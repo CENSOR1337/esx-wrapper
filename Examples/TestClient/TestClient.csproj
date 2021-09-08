@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\bin\Examples\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,18 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CitizenFX.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\CitizenFX.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="CitizenFX.Core.Client">
-      <HintPath>..\..\jatekok\fivem\FiveM.app\citizen\clr2\lib\mono\4.5\CitizenFX.Core.Client.dll</HintPath>
+    <Reference Include="CitizenFX.Core.Client, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CitizenFX.Core.Client.1.0.4459\lib\net45\CitizenFX.Core.Client.dll</HintPath>
     </Reference>
     <Reference Include="Nexd.ESX.Client">
-      <HintPath>..\Nexd\Nexd.ESX.Client\bin\Release\Nexd.ESX.Client.dll</HintPath>
+      <HintPath>..\..\bin\Nexd.ESX.Client.dll</HintPath>
     </Reference>
     <Reference Include="Nexd.ESX.Shared">
-      <HintPath>..\Nexd\Nexd.ESX.Shared\bin\Release\Nexd.ESX.Shared.dll</HintPath>
+      <HintPath>..\..\bin\Nexd.ESX.Shared.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,6 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,7 @@
 
     using CitizenFX.Core;
 
-    public static partial class ESX
+    public partial class ESX
     {
         public static partial class Game
         {

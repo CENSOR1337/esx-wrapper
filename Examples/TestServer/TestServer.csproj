@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\bin\Examples\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,15 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CitizenFX.Core">
-      <HintPath>.\CitizenFX.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Nexd.ESX.Server, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nexd\Nexd.ESX.Server\bin\Release\Nexd.ESX.Server.dll</HintPath>
-    </Reference>
-    <Reference Include="Nexd.ESX.Shared">
-      <HintPath>..\Nexd\Nexd.ESX.Shared\bin\Release\Nexd.ESX.Shared.dll</HintPath>
+    <Reference Include="CitizenFX.Core.Server, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\..\packages\CitizenFX.Core.Server.1.0.4459\lib\net45\CitizenFX.Core.Server.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,6 +48,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Nexd.ESX.Server\Nexd.ESX.Server.csproj">
+      <Project>{ad179bc9-c2bd-4425-b7c9-6d0e2215d492}</Project>
+      <Name>Nexd.ESX.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Nexd.ESX.Shared\Nexd.ESX.Shared.csproj">
+      <Project>{4eca82e2-df1a-47bf-8ce2-9b51f09d00e3}</Project>
+      <Name>Nexd.ESX.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

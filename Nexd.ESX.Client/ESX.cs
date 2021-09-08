@@ -1,13 +1,15 @@
 ﻿namespace Nexd.ESX.Client
 {
     using System;
-    using CitizenFX.Core;
 
     public static partial class ESX
     {
         private static dynamic Raw;
 
-        static ESX() => BaseScript.TriggerEvent("esx:getSharedObject", new object[] { new Action<dynamic>(esx => { Raw = esx; }) });
+        static ESX()
+        {
+            CitizenFX.Core.BaseScript.TriggerEvent("esx:getSharedObject", new Action<dynamic>(esx => { Raw = esx; }));
+        }
 
         public static void TriggerServerCallback(string name, Action<dynamic> callback, dynamic args = null) => Raw.TriggerServerCallback(name, callback, args);
         public static PlayerData GetPlayerData() => new PlayerData(Raw.GetPlayerData());
@@ -56,7 +58,7 @@
 
         public static void ShowNotification(string message, HudColor hudColor = HudColor.HUD_COLOUR_DEFAULT)
         {
-            if(hudColor != HudColor.HUD_COLOUR_DEFAULT) CitizenFX.Core.Native.API.ThefeedNextPostBackgroundColor((int)hudColor);
+            if (hudColor != HudColor.HUD_COLOUR_DEFAULT) CitizenFX.Core.Native.API.ThefeedNextPostBackgroundColor((int)hudColor);
             Raw.ShowNotification(message);
         }
     }

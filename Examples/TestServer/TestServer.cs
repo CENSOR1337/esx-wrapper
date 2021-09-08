@@ -128,7 +128,7 @@ namespace TestServer
         private void LoadoutInfo(int source, List<object> args, string raw)
         {
             xPlayer xPlayer = ESX.GetPlayerFromId(source);
-            List<Weapon> loadout = xPlayer.GetLoadout(false);
+            List<Weapon> loadout = xPlayer.GetLoadout();
             foreach(Weapon i in loadout)
             {
                 xPlayer.ShowNotification($"Weapon: {i.name} Ammo: {i.ammo}");
